@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Recipe App Built with Rapid Api
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://res.cloudinary.com/chuksmbanaso/image/upload/v1644267445/media/Screenshot_18_zd0vpu.png" title="Recipe App" alt="Recipe App Website">
 
 ## Available Scripts
 
