@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Navbar, Sidebar, Footer } from "./components";
-import { Home, About, Tags, Recipes, SingleRecipes, Error } from "./pages";
+import { Navbar, Sidebar, Footer, Tag } from "./components";
+import { Home, About, Category, Recipes, SingleRecipes, Error } from "./pages";
 
 function App() {
   return (
@@ -15,11 +15,14 @@ function App() {
         <Route exact path="/about">
           <About />
         </Route>
-        <Route exact path="/tags">
-          <Tags />
+        <Route exact path="/category">
+          <Category />
         </Route>
         <Route exact path="/recipes">
           <Recipes />
+        </Route>
+        <Route exact path="/tags/:slug">
+          <Tag />
         </Route>
         <Route exact path="/recipes/:id" children={<SingleRecipes />} />
         <Route path="*">

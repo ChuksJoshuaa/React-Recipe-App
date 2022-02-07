@@ -3,6 +3,6 @@ import Recipes from "./RecipesPage";
 import SingleRecipes from "./SingleRecipesPage";
 import Error from "./ErrorPage";
 import About from "./AboutPage";
-import Tags from "./TagsPage";
+import Category from "./CategoryPage";
 
-export { Home, Recipes, SingleRecipes, Error, About, Tags };
+export { Home, Recipes, SingleRecipes, Error, About, Category };

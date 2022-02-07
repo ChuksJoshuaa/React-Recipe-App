@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Error from "./Error";
 import Loading from "./Loading";
 import { FaSearch } from "react-icons/fa";
+import Config from "./Config";
 
 const HomeRecipes = () => {
   const {
@@ -25,16 +26,7 @@ const HomeRecipes = () => {
         <p className="underline"></p>
         <div className="oga">
           {products.slice(2, 6).map((product) => {
-            const { id, title, img, url } = product;
-            return (
-              <aside key={id}>
-                <img src={img} alt={title} />
-                <a href={url} className="link">
-                  <FaSearch />
-                </a>
-                <h2>{title}</h2>
-              </aside>
-            );
+            return <Config key={product.id} {...product} />;
           })}
         </div>
       </div>
@@ -47,14 +39,13 @@ const HomeRecipes = () => {
 
 const Wrapper = styled.div`
   margin-top: 1rem;
-
   .top h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     text-align: center;
     letter-spacing: 0.125rem;
-    font-weight: 400;
+    font-weight: 600;
     color: #222;
-    font-family: "Racing Sans One", cursive;
+    font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
   }
 
@@ -82,58 +73,15 @@ const Wrapper = styled.div`
     margin-top: 4%;
   }
 
-  aside {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-
-  aside img {
-    width: 300px;
-  }
-
-  .link {
-    transform: translate(-50%, -50%);
-    background: #222;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 50%;
-    width: 2.8rem;
-    color: red;
-    height: 2.8rem;
-    border-radius: 50%;
-    transition: all 0.2s linear;
-    opacity: 0;
-    cursor: pointer;
-    svg {
-      font-size: 1.4rem;
-      color: #fff;
-    }
-  }
-
-  aside:hover img {
-    opacity: 0.5;
-  }
-  aside:hover .link {
-    opacity: 1;
-  }
-
-  aside h2 {
-    font-size: 1.3em;
-    text-align: center;
-    font-family: "Amiri", serif;
-  }
-
   @media screen and (max-width: 1273px) {
     .oga {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
-    aside img {
-      width: 100%;
+    .top h1 {
+      font-size: 2.3rem;
     }
   }
 `;
 
 export default HomeRecipes;
-
-// grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) );

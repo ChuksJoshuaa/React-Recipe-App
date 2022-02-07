@@ -39,22 +39,22 @@ export const ReceipesProvider = ({ children }) => {
     },
   };
 
-  // const getProducts = (options) => {
-  //   dispatch({ type: GET_PRODUCTS_BEGIN });
-  //   axios
-  //     .request(options)
-  //     .then(function (response) {
-  //       const products = response.data;
-  //       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
-  //     })
-  //     .catch(function (error) {
-  //       dispatch({ type: GET_PRODUCTS_ERROR });
-  //     });
-  // };
+  const getProducts = (options) => {
+    dispatch({ type: GET_PRODUCTS_BEGIN });
+    axios
+      .request(options)
+      .then(function (response) {
+        const products = response.data;
+        dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
+      })
+      .catch(function (error) {
+        dispatch({ type: GET_PRODUCTS_ERROR });
+      });
+  };
 
-  // useEffect(() => {
-  //   getProducts(options);
-  // }, []);
+  useEffect(() => {
+    getProducts(options);
+  }, []);
 
   return (
     <ReceipesContext.Provider value={{ ...state, openSidebar, closeSidebar }}>

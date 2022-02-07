@@ -25,9 +25,9 @@ export const links = [
 
   {
     id: 4,
-    text: "tags",
+    text: "category",
     icon: <FaShare />,
-    url: "/tags",
+    url: "/category",
   },
 ];
 
@@ -38,9 +38,10 @@ export const menu = [
     category: "breakfast",
     price: 15.99,
     time: 10,
+    serving: 5,
     cook: 20,
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1643595173/media/food5_sqyzuv.png",
-    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed.Lorem ipsum dolor sit ametconsectetur adipisicing elit. Aperiam aspernaturlibero deleniti, adipisci nihil in fugiat, minus iste assumenda enim aliquam consequuntur? Accusamusaccusantium non inventore debitis eveniet illum numquam?`,
     tools: [
       "hand blender",
       "large heavy pot with lid",
@@ -68,8 +69,9 @@ export const menu = [
     price: 13.99,
     time: 6,
     cook: 15,
+    serving: 10,
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1643595189/media/food1_a9qdlj.jpg",
-    desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
+    desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur libero deleniti, adipisci nihil in fugiat,minus iste assumenda enim aliquam consequuntur? Accusamus accusantium non inventore debitis eveniet illum numquam. vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius assumenda nesciunt eaque cum nihil? Ex explicabo`,
     tools: [
       "hand blender",
       "large heavy pot with lid",
@@ -96,9 +98,10 @@ export const menu = [
     category: "shakes",
     price: 6.99,
     time: 12,
+    serving: 8,
     cook: 24,
-    img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1643595277/media/item-3_jrt3yu.jpg",
-    desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
+    img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1644249254/media/milk1_a2pcs2.jpg",
+    desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur libero deleniti, adipisci nihil in fugiat,minus iste assumenda enim aliquam consequuntur? Accusamus accusantium non inventore debitis eveniet illum numquam. vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius assumenda nesciunt eaque cum nihil? Ex explicabo`,
     tools: [
       "hand blender",
       "large heavy pot with lid",
@@ -125,9 +128,10 @@ export const menu = [
     category: "breakfast",
     price: 20.99,
     time: 5,
+    serving: 11,
     cook: 18,
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1643595200/media/food4_xvu8ls.jpg",
-    desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
+    desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur libero deleniti, adipisci nihil in fugiat,minus iste assumenda enim aliquam consequuntur? Accusamus accusantium non inventore debitis eveniet illum numquam. vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius assumenda nesciunt eaque cum nihil? Ex explicabo`,
     tools: [
       "hand blender",
       "large heavy pot with lid",
@@ -154,9 +158,10 @@ export const menu = [
     category: "dessert",
     price: 22.99,
     time: 16,
+    serving: 2,
     cook: 30,
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1643595206/media/food3_aymjkt.jpg",
-    desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
+    desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur libero deleniti, adipisci nihil in fugiat,minus iste assumenda enim aliquam consequuntur? Accusamus accusantium non inventore debitis eveniet illum numquam. vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius assumenda nesciunt eaque cum nihil? Ex explicabo`,
     tools: [
       "hand blender",
       "large heavy pot with lid",
@@ -183,9 +188,10 @@ export const menu = [
     category: "shakes",
     price: 18.99,
     time: 9,
+    serving: 9,
     cook: 10,
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1643595287/media/item-6_fcs2cj.jpg",
-    desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
+    desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur libero deleniti, adipisci nihil in fugiat,minus iste assumenda enim aliquam consequuntur? Accusamus accusantium non inventore debitis eveniet illum numquam. vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius assumenda nesciunt eaque cum nihil? Ex explicabo`,
     tools: [
       "hand blender",
       "large heavy pot with lid",
@@ -212,9 +218,10 @@ export const menu = [
     category: "breakfast",
     price: 8.99,
     time: 13,
+    serving: 4,
     cook: 27,
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1643595255/media/item-7_sandsh.jpg",
-    desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
+    desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur libero deleniti, adipisci nihil in fugiat,minus iste assumenda enim aliquam consequuntur? Accusamus accusantium non inventore debitis eveniet illum numquam. vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius assumenda nesciunt eaque cum nihil? Ex explicabo`,
     tools: [
       "hand blender",
       "large heavy pot with lid",
@@ -242,8 +249,9 @@ export const menu = [
     price: 12.99,
     time: 7,
     cook: 14,
+    serving: 5,
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1643595231/media/item-2_nb1glr.jpg",
-    desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
+    desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur libero deleniti, adipisci nihil in fugiat,minus iste assumenda enim aliquam consequuntur? Accusamus accusantium non inventore debitis eveniet illum numquam. vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius assumenda nesciunt eaque cum nihil? Ex explicabo`,
     tools: [
       "hand blender",
       "large heavy pot with lid",
@@ -270,9 +278,10 @@ export const menu = [
     category: "shakes",
     price: 16.99,
     time: 17,
+    serving: 11,
     cook: 31,
     img: "https://res.cloudinary.com/chuksmbanaso/image/upload/v1643595218/media/item-10_v4z2aq.jpg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+    desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur libero deleniti, adipisci nihil in fugiat,minus iste assumenda enim aliquam consequuntur? Accusamus accusantium non inventore debitis eveniet illum numquam. vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius assumenda nesciunt eaque cum nihil? Ex explicabo`,
     tools: [
       "hand blender",
       "large heavy pot with lid",
@@ -290,7 +299,7 @@ export const menu = [
       "I'm baby mustache man braid fingerstache small batch venmo succulents shoreditch.",
       "Pabst pitchfork you probably haven't heard of them, asymmetrical seitan tousled succulents wolf banh mi man bun bespoke selfies freegan ethical hexagon.",
       "Polaroid iPhone bitters chambray. Cornhole swag kombucha live-edge.",
-      "Unicorn meditation affogato venmo, vexillologist DIY godard iPhone. Whatever chambray paleo, meh try-hard hashtag meggings wayfarers hella flannel ugh asymmetrical succulents.",
+      "Unicorn meditation affogato venmo, vexillologist DIY godard iPhone. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius assumenda nesciunt eaque cum nihil? Ex explicabo molestiae quidem corrupti culpa quas, itaque voluptates ea quisquam repudiandae est distinctio, eum vitae dicta officiis alias magni! Aspernatur tenetur non facilis exercitationem voluptatem! Whatever chambray paleo, meh try-hard hashtag meggings wayfarers hella flannel ugh asymmetrical succulents.",
     ],
   },
 ];

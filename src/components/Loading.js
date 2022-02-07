@@ -1,19 +1,9 @@
 import React from "react";
 
-// const Loading = () => {
-//   return (
-//     <div className="section section-center">
-//       <div className="loading"></div>
-//     </div>
-//   );
-// };
-
 const Loading = () => {
   return (
-    <div className="loader">
-      <div className="inner one"></div>
-      <div className="inner two"></div>
-      <div className="inner three"></div>
+    <div className="section section-center">
+      <div className="loading"></div>
     </div>
   );
 };

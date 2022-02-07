@@ -5,9 +5,10 @@ import HomeRecipes from "./HomeRecipes";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import Loading from "./Loading";
-import Category from "./Category";
 import Body from "./Body";
 import Error from "./Error";
+import Config from "./Config";
+import Tag from "./tags";
 
 export {
   Main,
@@ -17,7 +18,8 @@ export {
   Sidebar,
   Footer,
   Loading,
-  Category,
   Body,
   Error,
+  Config,
+  Tag,
 };

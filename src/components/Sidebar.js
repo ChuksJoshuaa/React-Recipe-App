@@ -19,15 +19,15 @@ const Sidebar = () => {
           rel="stylesheet"
         ></link>
         <div className="sidebar-header">
-          <button className="close-btn" type="button" onClick={closeSidebar}>
-            <FaTimes />
-          </button>
           <img
             src={logo}
             alt="This is a logo"
             className="image-top"
             style={{ width: "50px" }}
           />
+          <button className="close-btn" type="button" onClick={closeSidebar}>
+            <FaTimes />
+          </button>
         </div>
         <ul className="links">
           {data.map((item) => {
@@ -47,12 +47,12 @@ const Sidebar = () => {
 };
 const SidebarContainer = styled.div`
   text-align: center;
+
   .sidebar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   .close-btn {
     font-size: 2rem;
@@ -74,13 +74,14 @@ const SidebarContainer = styled.div`
   .links a {
     color: #222;
     font-size: 1.6rem;
-    text-align: right;
+    text-align: left;
+    font-weight: 900;
     text-transform: capitalize;
     letter-spacing: var(--spacing);
     display: block;
     padding: 1rem 1.5rem;
     transition: var(--transition);
-    font-family: "Racing Sans One", cursive;
+    font-family: "Rajdhani", sans-serif;
   }
 
   .links a:hover {
@@ -101,7 +102,7 @@ const SidebarContainer = styled.div`
     height: 100%;
     background: var(--clr-white);
     transition: var(--transition);
-    transform: translate(100%);
+    transform: translate(-100%);
     z-index: -1;
   }
   .show-sidebar {

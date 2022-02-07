@@ -13,7 +13,7 @@ const Body = () => {
 };
 
 const Wrapper = styled.section`
-  margin-top: 5%;
+  margin-top: 3%;
   height: 500px;
   width: 100%;
 
@@ -23,9 +23,9 @@ const Wrapper = styled.section`
     margin: 0 auto;
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1300px) {
     height: auto;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
   }
 `;
 

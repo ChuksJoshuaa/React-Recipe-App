@@ -1,22 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../static/images/logo.jpg";
 import { useReceipesContext } from "../contexts/receipes_context";
-import {
-  FaBars,
-  FaFacebook,
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaBars, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { links } from "../assets";
 
 const Navbar = () => {
   const [data, setData] = useState(links);
   const { openSidebar } = useReceipesContext();
+  const [navPosition, setNavPosition] = useState(0);
+  const scrollHeight = window.pageYOffset;
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setNavPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <NavContainer>
+    <NavContainer className={`${scrollHeight ? "fixed-nav" : null}`}>
       <nav>
         <link
           href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Cormorant+Garamond:wght@300&family=Racing+Sans+One&family=Rajdhani:wght@500&family=Roboto+Mono:wght@100&display=swap"
@@ -49,11 +57,6 @@ const Navbar = () => {
           </ul>
           <ul className="social-icons">
             <li>
-              <a href="https://www.facebook.com/chuks.j.m">
-                <FaFacebook />
-              </a>
-            </li>
-            <li>
               <a href="https://www.twitter.com/Chuksmbanaso">
                 <FaTwitter />
               </a>
@@ -76,6 +79,8 @@ const Navbar = () => {
 };
 
 const NavContainer = styled.nav`
+  z-index: 9999;
+
   nav {
     background: rgba(255, 255, 255, 0.3);
     box-shadow: var(--light-shadow);
@@ -109,12 +114,13 @@ const NavContainer = styled.nav`
   .links a {
     color: var(--clr-grey-3);
     font-size: 1.6rem;
+    font-weight: 700;
     text-transform: capitalize;
     letter-spacing: var(--spacing);
     display: block;
     padding: 0.5rem 1rem;
     transition: var(--transition);
-    font-family: "Racing Sans One", cursive;
+    font-family: "Rajdhani", sans-serif;
   }
 
   .links a:hover {

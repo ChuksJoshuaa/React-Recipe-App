@@ -1,5 +1,6 @@
 import React from "react";
-import photo from "../static/images/food2";
+import photo from "../static/images/food0.jpg";
+import styled from "styled-components";
 
 const AboutPage = () => {
   return (
@@ -17,7 +18,10 @@ const AboutPage = () => {
             expedita commodi officiis iste! Nisi expedita porro nesciunt
             temporibus et voluptatem molestias eum fuga, ad sunt aperiam quod
             ducimus ut debitis delectus ea laudantium ipsam tempore velit.
-            Recusandae ipsum facere aspernatur sed totam iste!
+            Recusandae ipsum facere aspernatur sed totam iste Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Ratione, explicabo fugit!
+            Dolorem sapiente perspiciatis modi beatae quae libero ullam
+            doloremque.
           </p>
         </article>
       </Wrapper>
@@ -31,29 +35,29 @@ const Wrapper = styled.section`
   img {
     width: 100%;
     display: block;
-    border-radius: var(--radius);
     height: 500px;
+    border-radius: 0.5rem;
   }
-  p {
+  article p {
     line-height: 2;
     max-width: 45em;
     margin: 0 auto;
     margin-top: 2rem;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: #222;
-    font-family: "Racing Sans One", cursive;
+    font-family: "Rajdhani", sans-serif;
   }
   .title {
     text-align: left;
   }
 
   .title h2 {
-    font-size: 2rem;
+    font-size: 2.4rem;
     letter-spacing: 0.125rem;
-    font-weight: 500;
-    color: gray;
+    font-weight: 400;
+    color: #222;
     text-transform: uppercase;
-    font-family: "Amiri", serif;
+    font-family: "Open Sans", sans-serif;
   }
 
   .underline {
@@ -67,6 +71,28 @@ const Wrapper = styled.section`
   }
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .title h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .underline {
+      margin: 0 auto;
+    }
+
+    article p {
+      font-size: 1.2rem;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 781px) {
+    img {
+      height: 300px;
+    }
   }
 `;
 

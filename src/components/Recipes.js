@@ -1,28 +1,74 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Category from "./Category";
 import Loading from "./Loading";
 import { menu } from "../assets";
+import { Link } from "react-router-dom";
+// import slugify from "slugify";
+const allCategories = ["all", ...new Set(menu.map((item) => item.category))];
 
 const Recipes = () => {
-  const [data, setData] = useState(menu);
+  const [recipeItem, setReceipeItem] = useState(menu);
+  const [categories, setCategories] = useState(allCategories);
 
-  if (data.length < 1) {
+  const filterItems = (category) => {
+    if (category === "all") {
+      setReceipeItem(menu);
+      return;
+    }
+    const newRecipes = menu.filter((item) => item.category === category);
+    setReceipeItem(newRecipes);
+  };
+
+  if (recipeItem.length === 0) {
     return <Loading />;
   }
+
   return (
     <Wrapper>
       <div className="section">
         <h1>Local Recipes</h1>
         <p className="underline"></p>
         <div className="center">
-          <Category />
+          <div className="butt">
+            <h1>Category</h1>
+            <div className="bobbi">
+              {categories.map((category, index) => {
+                return (
+                  <button
+                    key={index}
+                    className="btn"
+                    onClick={() => filterItems(category)}
+                  >
+                    {category}
+                    <span style={{ color: "crimson" }}>
+                      (
+                      {`${
+                        category === "all"
+                          ? 9
+                          : category === "shakes"
+                          ? 3
+                          : category === "lunch"
+                          ? 2
+                          : category === "breakfast"
+                          ? 3
+                          : 1
+                      }`}
+                      )
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
           <div className="aside">
-            {data.map((item) => {
+            {recipeItem.map((item) => {
               const { id, title, img, time, cook } = item;
+              // const slug = slugify(title, { lower: true });
               return (
                 <div key={id} className="baby">
-                  <img src={img} alt={title} />
+                  <Link to={`/recipes/${id}`}>
+                    <img src={img} alt={title} />
+                  </Link>
                   <h2>{title}</h2>
                   <p>
                     Prep: {time}min
@@ -40,20 +86,33 @@ const Recipes = () => {
 };
 
 const Wrapper = styled.main`
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   .section {
     height: 900px;
     width: 100%;
   }
 
   .section h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     text-align: center;
     letter-spacing: 0.125rem;
-    font-weight: 400;
+    font-weight: 600;
     color: #222;
-    font-family: "Racing Sans One", cursive;
+    font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
+  }
+
+  .butt h1 {
+    letter-spacing: 0.125rem;
+    font-weight: 400;
+    color: crimson;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    margin-top: -0.08rem;
+    font-size: 1.8rem;
+    position: relative;
+    right: 11%;
+    text-align: center;
   }
 
   .section .underline {
@@ -64,6 +123,54 @@ const Wrapper = styled.main`
     margin-right: auto;
     margin-bottom: 3%;
     opacity: 0.8;
+  }
+  .bobbi {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .bobbi .btn {
+    text-transform: uppercase;
+    background: #fff;
+    color: #222;
+    letter-spacing: 0.125rem;
+    display: inline-block;
+    font-weight: 800;
+    transition: all 0.2s linear;
+    font-size: 0.875rem;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    width: 60%;
+    border: 1px solid silver;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .bobbi {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .bobbi .btn {
+      width: 90%;
+      margin-left: 3%;
+      flex-wrap: wrap;
+    }
+
+    .butt h1 {
+      right: 0;
+      margin-top: 2rem;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 527px) {
+    .bobbi .btn {
+      place-items: center;
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
   }
 
   .center {
@@ -83,8 +190,13 @@ const Wrapper = styled.main`
   }
 
   .baby img {
-    width: 200px;
+    width: 210px;
     height: 150px;
+    border-radius: 0.5rem;
+  }
+
+  .baby:hover img {
+    opacity: 0.8;
   }
 
   .baby h2 {
@@ -98,6 +210,8 @@ const Wrapper = styled.main`
   }
 
   .baby p {
+    margin-top: -1rem;
+    color: #222;
     letter-spacing: 0.125rem;
     margin-bottom: 0;
     font-family: "Rajdhani", sans-serif;
@@ -106,20 +220,32 @@ const Wrapper = styled.main`
   }
 
   .baby .span {
-    color: #222;
+    color: crimson;
     font-size: 2em;
     opacity: 0.7;
   }
+
+  /* @media screen and (max-width: 1273px) {
+    margin-top: 40rem;
+  } */
 
   @media screen and (max-width: 1154px) {
     .section {
       height: auto;
       margin-bottom: 5%;
     }
+
+    .section h1 {
+      font-size: 2.3rem;
+    }
     .center {
       display: flex;
       flex-direction: column;
       margin: 10px;
+    }
+
+    .butt h1 {
+      font-size: 1.9rem;
     }
 
     .aside {
@@ -151,6 +277,19 @@ const Wrapper = styled.main`
   @media screen and (max-width: 528px) {
     .baby img {
       width: 250px;
+    }
+
+    .center {
+      place-items: center;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    .baby img {
+      width: 220px;
+    }
+    .aside {
+      place-items: center;
     }
   }
 `;

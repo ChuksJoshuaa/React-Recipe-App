@@ -14,7 +14,7 @@ const Main = () => {
 };
 
 const Wrapper = styled.div`
-  height: 500px;
+  height: 300px;
   background: linear-gradient(rgba(63, 208, 212, 0.4), rgba(0, 0, 0, 0.7)),
     url(${food2}) center/cover no-repeat;
   background-position: center;
@@ -28,11 +28,11 @@ const Wrapper = styled.div`
 
     p {
       font-size: 2em;
-      font-weight: 450;
+      font-weight: 600;
       letter-spacing: 0.125rem;
       text-transform: uppercase;
       color: rgb(255, 255, 255);
-      font-family: "Amiri", serif;
+      font-family: "Rajdhani", sans-serif;
       margin-bottom: 3%;
     }
 
@@ -40,9 +40,9 @@ const Wrapper = styled.div`
       font-size: 80px;
       line-height: 60px;
       letter-spacing: 0.25rem;
-      font-weight: 500;
+      font-weight: 900;
       color: rgb(255, 255, 255);
-      font-family: "Racing Sans One", cursive;
+      font-family: "Rajdhani", sans-serif;
       margin-bottom: 2%;
     }
 
