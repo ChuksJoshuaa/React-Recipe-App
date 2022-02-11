@@ -25,8 +25,8 @@ const HomeRecipes = () => {
         <h1>Top Recipes</h1>
         <p className="underline"></p>
         <div className="oga">
-          {products.slice(2, 6).map((product) => {
-            return <Config key={product.id} {...product} />;
+          {products.slice(2, 6).map((product, index) => {
+            return <Config key={index} {...product} />;
           })}
         </div>
       </div>
