@@ -1,6 +1,6 @@
 # Recipe App Built with Rapid Api
 
-<img src="https://res.cloudinary.com/chuksmbanaso/image/upload/v1644267646/media/Screenshot_19_fdxi54.png" title="Recipe App" alt="Recipe App Website">.
+<img src="https://res.cloudinary.com/chuksmbanaso/image/upload/v1644267646/media/Screenshot_19_fdxi54.png" title="Recipe App" alt="Recipe App Website">..
 
 ## Available Scripts
 
