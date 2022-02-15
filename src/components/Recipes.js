@@ -29,7 +29,7 @@ const Recipes = () => {
         <h1>Local Recipes</h1>
         <p className="underline"></p>
         <div className="center">
-          <div className="butt">
+          <div className="butt" data-aos={"fade-right"}>
             <h1>Category</h1>
             <div className="bobbi">
               {categories.map((category, index) => {
@@ -60,7 +60,7 @@ const Recipes = () => {
               })}
             </div>
           </div>
-          <div className="aside">
+          <div className="aside" data-aos={"zoom-in"}>
             {recipeItem.map((item) => {
               const { id, title, img, time, cook } = item;
               // const slug = slugify(title, { lower: true });
