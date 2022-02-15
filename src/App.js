@@ -4,6 +4,18 @@ import { Navbar, Sidebar, Footer, Tag } from "./components";
 import { Home, About, Category, Recipes, SingleRecipes, Error } from "./pages";
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      offset: 120,
+      easing: "ease",
+      once: false,
+      mirror: true,
+      anchorPlacement: "top-bottom",
+    });
+    AOS.refresh();
+  }, []);
   return (
     <Router>
       <Navbar />
