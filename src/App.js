@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar, Sidebar, Footer, Tag } from "./components";
 import { Home, About, Category, Recipes, SingleRecipes, Error } from "./pages";
+import AOS from "aos";
 
 function App() {
   useEffect(() => {
