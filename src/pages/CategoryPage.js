@@ -26,7 +26,7 @@ const CategoryPage = () => {
   return (
     <Wrapper>
       <div className="tagged">
-        <div className="tags-head">
+        <div className="tags-head" data-aos={"zoom-in"}>
           {categories.map((category, index) => {
             const slug = slugify(category, { lower: true });
             return (
