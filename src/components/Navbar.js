@@ -57,17 +57,17 @@ const Navbar = () => {
           </ul>
           <ul className="social-icons">
             <li>
-              <a href="https://www.twitter.com/Chuksmbanaso">
+              <a href="https://www.twitter.com/ChuksJoshuaa">
                 <FaTwitter />
               </a>
             </li>
             <li>
-              <a href="https://github.com/ChuksMbanaso">
+              <a href="https://github.com/ChuksJoshuaa">
                 <FaGithub />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/chuks-mbanaso">
+              <a href="https://www.linkedin.com/in/chuks-joshuaa">
                 <FaLinkedin />
               </a>
             </li>
