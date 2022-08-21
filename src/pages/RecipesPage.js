@@ -23,17 +23,10 @@ const RecipesPage = () => {
     <Wrapper>
       <div className='top'>
         <h1>Recipes</h1>
-<<<<<<< HEAD
-        <p className='underline'></p>
-        <div className='oga'>
-          {products.slice(2, 34).map((product, index) => {
-            return <Config key={index} {...product} />
-=======
         <p className="underline"></p>
         <div className="oga">
           {products.slice(2, 34).map((product, index) => {
             return <Config key={index} {...product} />;
->>>>>>> a9537f634bb0103a5a079e62d766569047fc5da1
           })}
         </div>
       </div>
