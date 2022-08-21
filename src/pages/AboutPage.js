@@ -33,6 +33,8 @@ const AboutPage = () => {
 const Wrapper = styled.section`
   display: grid;
   gap: 4rem;
+  margin-top: 5em;
+  
   img {
     width: 100%;
     display: block;
