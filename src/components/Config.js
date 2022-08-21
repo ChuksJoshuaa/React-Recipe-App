@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Config = ({ title, img, url }) => {
   return (
     <Wrapper>
-      <aside>
+      <aside data-aos={"zoom-in"}>
         <img src={img} alt={title} />
         <a href={url} className="link">
           <FaSearch />

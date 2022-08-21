@@ -3,12 +3,10 @@ import styled from "styled-components";
 import { menu } from "../assets";
 import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
-import Tag from "../components/tags";
 import slugify from "slugify";
 const allCategories = ["all", ...new Set(menu.map((item) => item.category))];
 
 const CategoryPage = () => {
-  const [categories, setCategories] = useState(allCategories);
   const [receipeItem, setReceipeItem] = useState(menu);
 
   const filterItems = (category) => {
@@ -26,8 +24,8 @@ const CategoryPage = () => {
   return (
     <Wrapper>
       <div className="tagged">
-        <div className="tags-head">
-          {categories.map((category, index) => {
+        <div className="tags-head" data-aos={"zoom-in"}>
+          {allCategories.map((category, index) => {
             const slug = slugify(category, { lower: true });
             return (
               <div key={index}>

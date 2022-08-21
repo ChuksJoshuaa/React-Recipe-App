@@ -107,6 +107,10 @@ h4 {
     background: #fff;
 }
 
+.hide-fixed-nav {
+   opacity: 0;
+}
+
 .fixed-nav .links a{
     color: gray;
 }

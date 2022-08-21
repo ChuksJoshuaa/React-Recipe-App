@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/receipes_reducer";
 import axios from "axios";
+import { receipeOptions } from "../utils";
 
 import {
   SIDEBAR_OPEN,
@@ -30,19 +31,11 @@ export const ReceipesProvider = ({ children }) => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
 
-  const options = {
-    method: "GET",
-    url: "https://cooking-recipe2.p.rapidapi.com/getbycat/Indian%20Desserts",
-    headers: {
-      "x-rapidapi-host": "cooking-recipe2.p.rapidapi.com",
-      "x-rapidapi-key": "a9af11c38fmshc761ffe28560cf4p184146jsn1203d639b760",
-    },
-  };
-
-  const getProducts = (options) => {
+  const getProducts = () => {
     dispatch({ type: GET_PRODUCTS_BEGIN });
+    
     axios
-      .request(options)
+      .request(receipeOptions)
       .then(function (response) {
         const products = response.data;
         dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
@@ -53,7 +46,7 @@ export const ReceipesProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getProducts(options);
+    getProducts();
   }, []);
 
   return (

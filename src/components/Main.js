@@ -5,7 +5,7 @@ import food2 from "../static/images/food2.jpg";
 const Main = () => {
   return (
     <Wrapper>
-      <div className="hero">
+      <div className="hero" data-aos={"fade-right"}>
         <h2>Simply Recipes</h2>
         <p>No Fluff, Just Recipes</p>
       </div>

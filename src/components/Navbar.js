@@ -7,24 +7,31 @@ import { FaBars, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { links } from "../assets";
 
 const Navbar = () => {
-  const [data, setData] = useState(links);
   const { openSidebar } = useReceipesContext();
   const [navPosition, setNavPosition] = useState(0);
   const scrollHeight = window.pageYOffset;
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setNavPosition(position);
-  };
+  
 
-  useEffect(() => {
+  const handleScroll = () => {
+    setNavPosition(scrollHeight);
+  };
+  
+
+  const letHandle = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+
+  }
+
+  useEffect(() => {
+    letHandle()
   }, []);
+
   return (
-    <NavContainer className={`${scrollHeight ? "fixed-nav" : null}`}>
+    <NavContainer className={`${handleScroll ? "fixed-nav" : openSidebar || navPosition === 0 ?  null: null}`}>
       <nav>
         <link
           href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Cormorant+Garamond:wght@300&family=Racing+Sans+One&family=Rajdhani:wght@500&family=Roboto+Mono:wght@100&display=swap"
@@ -43,7 +50,7 @@ const Navbar = () => {
             </button>
           </div>
           <ul className="links">
-            {data.map((item) => {
+            {links.map((item) => {
               const { id, text, icon, url } = item;
               return (
                 <li key={id} className="linky">
@@ -57,17 +64,17 @@ const Navbar = () => {
           </ul>
           <ul className="social-icons">
             <li>
-              <a href="https://www.twitter.com/Chuksmbanaso">
+              <a href="https://www.twitter.com/ChuksJoshuaa">
                 <FaTwitter />
               </a>
             </li>
             <li>
-              <a href="https://github.com/ChuksMbanaso">
+              <a href="https://github.com/ChuksJoshuaa">
                 <FaGithub />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/chuks-mbanaso">
+              <a href="https://www.linkedin.com/in/chuks-joshuaa">
                 <FaLinkedin />
               </a>
             </li>

@@ -2,31 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import { useReceipesContext } from "../contexts/receipes_context";
 import { Link } from "react-router-dom";
-import Error from "./Error";
 import Loading from "./Loading";
-import { FaSearch } from "react-icons/fa";
 import Config from "./Config";
 
 const HomeRecipes = () => {
-  const {
-    products_loading: loading,
-    products_error: error,
-    products,
-  } = useReceipesContext();
+  const { products_loading: loading, products_error: error, products} = useReceipesContext();
+
   if (loading) {
     return <Loading />;
   }
-  if (error) {
-    <Error />;
+
+    if(error){
+    return (
+      <div>Try again....</div>
+    )
   }
+
   return (
     <Wrapper>
       <div className="top">
         <h1>Top Recipes</h1>
         <p className="underline"></p>
         <div className="oga">
-          {products.slice(2, 6).map((product) => {
-            return <Config key={product.id} {...product} />;
+          {products.slice(2, 6).map((product, index) => {
+            return <Config key={index} {...product} />;
           })}
         </div>
       </div>

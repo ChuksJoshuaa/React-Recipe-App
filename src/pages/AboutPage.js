@@ -1,13 +1,13 @@
 import React from "react";
-import photo from "../static/images/food0.jpg";
+import icon from "../static/images/food0.jpg";
 import styled from "styled-components";
 
 const AboutPage = () => {
   return (
     <main>
       <Wrapper className="page section section-center">
-        <img src={photo} alt="photo" />
-        <article>
+        <img src={icon} alt="icon" data-aos={"fade-right"} />
+        <article data-aos={"zoom-in"}>
           <div className="title">
             <h2>About Us</h2>
             <div className="underline"></div>

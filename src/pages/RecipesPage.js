@@ -1,36 +1,38 @@
-import React from "react";
-import styled from "styled-components";
-import { useReceipesContext } from "../contexts/receipes_context";
-import Error from "../components/Error";
-import Loading from "../components/Loading";
-import Config from "../components/Config";
+import React from 'react'
+import styled from 'styled-components'
+import { useReceipesContext } from '../contexts/receipes_context'
+import Loading from '../components/Loading'
+import Config from '../components/Config'
 
 const RecipesPage = () => {
   const {
     products_loading: loading,
     products_error: error,
     products,
-  } = useReceipesContext();
+  } = useReceipesContext()
   if (loading) {
-    return <Loading />;
+    return <Loading />
   }
-  if (error) {
-    <Error />;
+
+  if(error){
+    return (
+      <div>Try again....</div>
+    )
   }
   return (
     <Wrapper>
-      <div className="top">
+      <div className='top'>
         <h1>Recipes</h1>
-        <p className="underline"></p>
-        <div className="oga">
-          {products.slice(2, 34).map((product) => {
-            return <Config key={product.id} {...product} />;
+        <p className='underline'></p>
+        <div className='oga'>
+          {products.slice(2, 34).map((product, index) => {
+            return <Config key={index} {...product} />
           })}
         </div>
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.div`
   margin-top: 1rem;
@@ -44,7 +46,7 @@ const Wrapper = styled.div`
     text-align: center;
     letter-spacing: 0.125rem;
     color: #222;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
   }
 
@@ -73,6 +75,6 @@ const Wrapper = styled.div`
   .top h1 {
     font-size: 2rem;
   }
-`;
+`
 
-export default RecipesPage;
+export default RecipesPage

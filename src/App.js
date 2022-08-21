@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar, Sidebar, Footer, Tag } from "./components";
 import { Home, About, Category, Recipes, SingleRecipes, Error } from "./pages";
+import AOS from "aos";
+
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      offset: 120,
+      easing: "ease",
+      once: true,
+      mirror: true,
+      anchorPlacement: "top-bottom",
+    });
+    AOS.refresh();
+  }, []);
   return (
     <Router>
       <Navbar />

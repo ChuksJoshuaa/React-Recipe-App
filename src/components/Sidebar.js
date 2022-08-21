@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../static/images/logo.jpg";
 import styled from "styled-components";
@@ -7,7 +7,6 @@ import { links } from "../assets";
 import { FaTimes } from "react-icons/fa";
 
 const Sidebar = () => {
-  const [data, setData] = useState(links);
   const { closeSidebar, isSidebarOpen } = useReceipesContext();
   return (
     <SidebarContainer>
@@ -30,7 +29,7 @@ const Sidebar = () => {
           </button>
         </div>
         <ul className="links">
-          {data.map((item) => {
+          {links?.map((item) => {
             const { id, text, icon, url } = item;
             return (
               <li key={id} className="linky" onClick={closeSidebar}>
