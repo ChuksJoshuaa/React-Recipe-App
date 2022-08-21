@@ -6,7 +6,11 @@ const AboutPage = () => {
   return (
     <main>
       <Wrapper className="page section section-center">
+<<<<<<< HEAD
         <img src={icon} alt="icon" data-aos={"fade-right"} />
+=======
+        <img src={photo} alt="photo" data-aos={"fade-right"} />
+>>>>>>> a9537f634bb0103a5a079e62d766569047fc5da1
         <article data-aos={"zoom-in"}>
           <div className="title">
             <h2>About Us</h2>
