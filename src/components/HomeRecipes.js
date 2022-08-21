@@ -8,6 +8,10 @@ import Config from "./Config";
 const HomeRecipes = () => {
   const { products_loading: loading, products_error: error, products} = useReceipesContext();
 
+  let storedData = JSON.parse(localStorage.getItem("storedData"));
+  const fetchData = storedData.data
+  
+
   if (loading) {
     return <Loading />;
   }
@@ -24,7 +28,7 @@ const HomeRecipes = () => {
         <h1>Top Recipes</h1>
         <p className="underline"></p>
         <div className="oga">
-          {products.slice(2, 6).map((product, index) => {
+          {(products || fetchData).slice(2, 6).map((product, index) => {
             return <Config key={index} {...product} />;
           })}
         </div>
