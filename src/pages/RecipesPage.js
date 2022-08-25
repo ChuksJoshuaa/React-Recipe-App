@@ -10,9 +10,6 @@ const RecipesPage = () => {
     products_error: error,
     products,
   } = useReceipesContext()
-
-   let storedData = JSON.parse(localStorage.getItem("storedData"));
-  const fetchData = storedData.data
   
 
   if (loading) {
@@ -24,13 +21,17 @@ const RecipesPage = () => {
       <div>Try again....</div>
     )
   }
+
+  if(!products.length){
+     return <Loading />
+  }
   return (
     <Wrapper>
       <div className='top'>
         <h1>Recipes</h1>
         <p className="underline"></p>
         <div className="oga">
-          {(products || fetchData).slice(2, 34).map((product, index) => {
+          {products.slice(2, 34).map((product, index) => {
             return <Config key={index} {...product} />;
           })}
         </div>
