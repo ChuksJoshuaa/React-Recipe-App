@@ -47,7 +47,8 @@ const TagsPage = () => {
 };
 
 const Wrapper = styled.section`
-  margin-top: 5rem;
+  margin-top: 10em;
+  height: 100vh;
 
   .article-result h1 {
     font-size: 2.6rem;

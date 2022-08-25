@@ -85,7 +85,7 @@ const Recipes = () => {
 };
 
 const Wrapper = styled.main`
-  /* margin-top: 1rem; */
+  margin-top: 3em;
   .section {
     height: 900px;
     width: 100%;
