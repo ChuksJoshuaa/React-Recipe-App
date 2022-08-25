@@ -68,19 +68,18 @@ const CategoryPage = () => {
 };
 
 const Wrapper = styled.div`
-  margin-top: 5em;
   height: 100vh;
   .tagged {
     max-width: 1100px;
     width: 90vw;
     margin: 0 auto;
-    /* height: 500px; */
   }
 
   .tags-head {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
+    margin-top: 10em;
   }
 
   .tags-body {
