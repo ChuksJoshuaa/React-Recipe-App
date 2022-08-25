@@ -34,7 +34,8 @@ export const ReceipesProvider = ({ children }) => {
   const getProducts = () => {
     dispatch({ type: GET_PRODUCTS_BEGIN });
     
-    axios
+    try {
+      axios
       .request(receipeOptions)
       .then(function (response) {
         const products = response.data;
@@ -43,6 +44,11 @@ export const ReceipesProvider = ({ children }) => {
       .catch(function (error) {
         dispatch({ type: GET_PRODUCTS_ERROR });
       });
+
+    }catch(error){
+      dispatch({ type: GET_PRODUCTS_ERROR });
+    }
+    
   };
 
   useEffect(() => {

@@ -17,8 +17,6 @@ const receipes_reducer = (state, action) => {
     return { ...state, products_loading: true }
   }
   if (action.type === GET_PRODUCTS_SUCCESS) {
-    let data = action?.payload
-    localStorage.setItem("storedData", JSON.stringify({ data }));
     return {
       ...state,
       products_loading: false,
