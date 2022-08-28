@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { useReceipesContext } from "../contexts/receipes_context";
 import { Link } from "react-router-dom";
@@ -7,11 +7,18 @@ import Config from "./Config";
 
 const HomeRecipes = () => {
   const { products_loading: loading, products_error: error, products} = useReceipesContext();
+  const [dataSet, setDataSet] = useState(products)
 
   let storedData = JSON.parse(localStorage.getItem("storedData"));
-  const fetchData = storedData.data
-  
 
+  if(storedData !== null || storedData !== undefined){
+    setDataSet(storedData.data)
+  }
+
+  if(storedData.data !== null || storedData.data !== undefined){
+    setDataSet(storedData.data)
+  }
+  
   if (loading) {
     return <Loading />;
   }
@@ -28,7 +35,7 @@ const HomeRecipes = () => {
         <h1>Top Recipes</h1>
         <p className="underline"></p>
         <div className="oga">
-          {(products || fetchData).slice(2, 6).map((product, index) => {
+          {dataSet.slice(2, 6).map((product, index) => {
             return <Config key={index} {...product} />;
           })}
         </div>
