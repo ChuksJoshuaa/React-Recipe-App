@@ -1,8 +1,4 @@
 import React, { useContext, useEffect, useReducer } from "react";
-import reducer from "../reducers/receipes_reducer";
-import axios from "axios";
-import { receipeOptions } from "../utils";
-
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
@@ -10,6 +6,10 @@ import {
   GET_PRODUCTS_SUCCESS,
   GET_PRODUCTS_ERROR,
 } from "../files";
+import reducer from "../reducers/receipes_reducer";
+import { receipeOptions, fetchData } from "../utils";
+
+let url = "https://cokoing-recipe2.p.rapidapi.com/getbycat/Indian%20Desserts";
 
 const initialState = {
   isSidebarOpen: false,
@@ -31,24 +31,15 @@ export const ReceipesProvider = ({ children }) => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
 
-  const getProducts = () => {
+  const getProducts = async () => {
     dispatch({ type: GET_PRODUCTS_BEGIN });
-    
-    try {
-      axios
-      .request(receipeOptions)
-      .then(function (response) {
-        const products = response.data;
-        dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
-      })
-      .catch(function (error) {
-        dispatch({ type: GET_PRODUCTS_ERROR });
-      });
 
-    }catch(error){
+    try {
+      const products = await fetchData(url, receipeOptions);
+      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
+    } catch (error) {
       dispatch({ type: GET_PRODUCTS_ERROR });
     }
-    
   };
 
   useEffect(() => {
