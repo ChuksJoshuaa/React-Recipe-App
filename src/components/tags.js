@@ -17,7 +17,11 @@ const TagsPage = () => {
 
   return (
     <Wrapper>
-      <article className="article-result">
+      <article
+        className={`article-result ${
+          yes(slug).length >= 6 ? "" : "article-height"
+        }`}
+      >
         <h1>{slug}</h1>
         <p className="underline"></p>
         <div className="article-head">
@@ -48,7 +52,25 @@ const TagsPage = () => {
 
 const Wrapper = styled.section`
   margin-top: 10em;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .article-result {
+    max-width: 1200px;
+    width: 90vw;
+    margin: 0 auto;
+    margin-bottom: 3em;
+  }
+
+  .article-height {
+    height: 100vh;
+  }
+
+  .article-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
 
   .article-result h1 {
     font-size: 2.6rem;
@@ -64,8 +86,7 @@ const Wrapper = styled.section`
     display: block;
     width: 148px;
     text-align: center;
-    margin-top: 3%;
-    margin-bottom: 5%;
+    margin-top: 5em;
   }
 
   .article-result .underline {
@@ -76,18 +97,6 @@ const Wrapper = styled.section`
     margin-right: auto;
     margin-bottom: 3%;
     opacity: 0.8;
-  }
-  .article-result {
-    max-width: 1200px;
-    width: 90vw;
-    margin: 0 auto;
-    /* height: 950px; */
-  }
-
-  .article-head {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
   }
 
   .article-container img {
@@ -126,22 +135,13 @@ const Wrapper = styled.section`
     font-size: 2em;
     opacity: 0.7;
   }
-  @media screen and (max-width: 1249px) {
-    .article-result {
-      margin-bottom: 3%;
-      height: auto;
-    }
-
+  @media screen and (max-width: 1500px) {
     .article-head {
       place-items: center;
       grid-template-columns: 1fr 1fr 1fr;
     }
-
-    .article-container img {
-      width: 100%;
-    }
   }
-  @media screen and (max-width: 743px) {
+  @media screen and (max-width: 850px) {
     .article-head {
       place-items: center;
       grid-template-columns: 1fr 1fr;
@@ -151,6 +151,10 @@ const Wrapper = styled.section`
   @media screen and (max-width: 637px) {
     .article-head {
       grid-template-columns: 1fr;
+    }
+
+    .article-container img {
+      object-fit: contain;
     }
   }
 `;
