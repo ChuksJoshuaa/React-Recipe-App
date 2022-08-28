@@ -105,7 +105,7 @@ const SingleRecipesPage = () => {
 };
 
 const Wrapper = styled.article`
-  margin-top: 5%;
+  
   max-width: 1200px;
   width: 90vw;
   margin: 0 auto;
@@ -115,11 +115,11 @@ const Wrapper = styled.article`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    margin-top: 8em;
   }
   section img {
     width: 550px;
     height: 350px;
-    margin-top: 13%;
     border-radius: 0.5rem;
   }
 
@@ -197,7 +197,7 @@ const Wrapper = styled.article`
 
     section img {
       width: 100%;
-      margin-top: 5%;
+      margin-top: 10em;
     }
 
     .main h1 {

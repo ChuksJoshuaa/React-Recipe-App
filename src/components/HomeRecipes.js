@@ -9,6 +9,7 @@ const HomeRecipes = () => {
   const { products_loading: loading, products_error: error, products} = useReceipesContext();
   const [dataSet, setDataSet] = useState(products)
 
+<<<<<<< HEAD
   let storedData = JSON.parse(localStorage.getItem("storedData"));
 
   if(storedData !== null || storedData !== undefined){
@@ -19,14 +20,20 @@ const HomeRecipes = () => {
     setDataSet(storedData.data)
   }
   
+=======
+>>>>>>> 2fdadc3635b4476b581b9ca874998f3fc0d23398
   if (loading) {
     return <Loading />;
   }
 
     if(error){
     return (
-      <div>Try again....</div>
+      <div className="text-center text-bold text-danger">Try again....</div>
     )
+  }
+
+  if(!products.length){
+     return <Loading />
   }
 
   return (
@@ -35,7 +42,11 @@ const HomeRecipes = () => {
         <h1>Top Recipes</h1>
         <p className="underline"></p>
         <div className="oga">
+<<<<<<< HEAD
           {dataSet.slice(2, 6).map((product, index) => {
+=======
+          {products.slice(2, 6).map((product, index) => {
+>>>>>>> 2fdadc3635b4476b581b9ca874998f3fc0d23398
             return <Config key={index} {...product} />;
           })}
         </div>

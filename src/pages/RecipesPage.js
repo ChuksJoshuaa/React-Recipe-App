@@ -5,12 +5,21 @@ import Loading from '../components/Loading'
 import Config from '../components/Config'
 
 const RecipesPage = () => {
+<<<<<<< HEAD
  
   const {products_loading: loading, products_error: error, products} = useReceipesContext()
   
    const [dataSet, setDataSet] = useState(products)
 
    let storedData = JSON.parse(localStorage.getItem("storedData"));
+=======
+  const {
+    products_loading: loading,
+    products_error: error,
+    products,
+  } = useReceipesContext()
+  
+>>>>>>> 2fdadc3635b4476b581b9ca874998f3fc0d23398
 
    if(storedData !== null || storedData !== undefined){
       setDataSet(storedData.data)
@@ -29,13 +38,21 @@ const RecipesPage = () => {
       <div>Try again....</div>
     )
   }
+
+  if(!products.length){
+     return <Loading />
+  }
   return (
     <Wrapper>
       <div className='top'>
         <h1>Recipes</h1>
         <p className="underline"></p>
         <div className="oga">
+<<<<<<< HEAD
           {dataSet.slice(2, 34).map((product, index) => {
+=======
+          {products.slice(2, 34).map((product, index) => {
+>>>>>>> 2fdadc3635b4476b581b9ca874998f3fc0d23398
             return <Config key={index} {...product} />;
           })}
         </div>
