@@ -1,17 +1,34 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import { useReceipesContext } from '../contexts/receipes_context'
 import Loading from '../components/Loading'
 import Config from '../components/Config'
 
 const RecipesPage = () => {
+<<<<<<< HEAD
+ 
+  const {products_loading: loading, products_error: error, products} = useReceipesContext()
+  
+   const [dataSet, setDataSet] = useState(products)
+
+   let storedData = JSON.parse(localStorage.getItem("storedData"));
+=======
   const {
     products_loading: loading,
     products_error: error,
     products,
   } = useReceipesContext()
   
+>>>>>>> 2fdadc3635b4476b581b9ca874998f3fc0d23398
 
+   if(storedData !== null || storedData !== undefined){
+      setDataSet(storedData.data)
+   }
+
+   if(storedData.data !== null || storedData.data !== undefined){
+    setDataSet(storedData.data)
+  }
+  
   if (loading) {
     return <Loading />
   }
@@ -31,7 +48,11 @@ const RecipesPage = () => {
         <h1>Recipes</h1>
         <p className="underline"></p>
         <div className="oga">
+<<<<<<< HEAD
+          {dataSet.slice(2, 34).map((product, index) => {
+=======
           {products.slice(2, 34).map((product, index) => {
+>>>>>>> 2fdadc3635b4476b581b9ca874998f3fc0d23398
             return <Config key={index} {...product} />;
           })}
         </div>
